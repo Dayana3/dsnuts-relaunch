@@ -132,6 +132,73 @@
     </ul>
   </section>
 
+  <section class="memes">
+  <h2 style="text-align:center; color:#00ffe0;">🔥 Meme Gallery</h2>
+  <p style="text-align:center; color:white;">Upload your best DSNT memes and earn a chance to win airdrops.</p>
+
+  <!-- Upload Form -->
+  <form id="uploadForm" style="text-align:center; margin:20px 0;">
+    <input type="file" id="fileInput" accept="image/*" required />
+    <button type="submit" class="btn">Upload Meme</button>
+  </form>
+
+  <!-- Gallery -->
+  <div id="gallery" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;"></div>
+</section>
+
+<script>
+  const cloudName = "dsnutscoin";
+  const uploadPreset = "public_upload";
+
+  const uploadForm = document.getElementById("uploadForm");
+  const fileInput = document.getElementById("fileInput");
+  const gallery = document.getElementById("gallery");
+
+  // Upload & Display Meme
+  uploadForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", uploadPreset);
+
+    try {
+      const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+
+      const img = document.createElement("img");
+      img.src = data.secure_url;
+      img.style.width = "200px";
+      img.style.borderRadius = "12px";
+      img.style.boxShadow = "0 0 10px #00ffe0";
+      gallery.prepend(img);
+
+      fileInput.value = "";
+    } catch (err) {
+      alert("Upload failed! Try again.");
+      console.error(err);
+    }
+  });
+</script>
+
+  <section class="email">
+  <h2>Join the Airdrop</h2>
+  <p>Drop your email to get early access to giveaways and exclusive memes.</p>
+  <form action="https://formsubmit.co/dsnuts.dsnt@gmail.com" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required />
+    <br>
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://dsnuts-relaunch.vercel.app/thank-you.html">
+    <button type="submit">Join the Drop</button>
+  </form>
+</section>
+
   <div class="social">
     <h2>Follow Us</h2>
     <a href="https://x.com/dsnutscoin" target="_blank">Twitter</a>
