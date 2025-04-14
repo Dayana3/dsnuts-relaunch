@@ -186,10 +186,38 @@
     }
   });
 </script>
+</script>
 
- <section class="email" style="text-align:center; padding: 60px 20px;">
+<!-- Auto-load memes from Cloudinary -->
+<script>
+  const gallery = document.getElementById("gallery");
+
+  async function loadMemes() {
+    try {
+      const res = await fetch("https://res.cloudinary.com/dsnutscoin/image/list/memes.json");
+      const data = await res.json();
+
+      data.resources.reverse().forEach(img => {
+        const image = document.createElement("img");
+        image.src = "https://res.cloudinary.com/dsnutscoin/image/upload/" + img.public_id + "." + img.format;
+        image.style.width = "200px";
+        image.style.borderRadius = "12px";
+        image.style.boxShadow = "0 0 10px #00ffe0";
+        image.style.margin = "10px";
+        gallery.appendChild(image);
+      });
+    } catch (err) {
+      console.error("Could not load memes:", err);
+    }
+  }
+
+  // Load memes on page load
+  window.addEventListener("DOMContentLoaded", loadMemes);
+</script>
+
+<section class="email" style="text-align:center; padding: 60px 20px;">
   <h2 style="color:#00ffe0;">Join the Airdrop</h2>
-  <p style="font-size:1.1rem; color:white; max-width:600px; margin:auto;">
+  <p style="font-size:1.1rem; color:white; max-width:600px; margin: auto; text-align: left;">
     Drop your email to get early access to giveaways and exclusive memes!
   </p>
 
@@ -213,7 +241,6 @@
     </button>
   </form>
 </section>
-
 
   <div class="social">
     <h2>Follow Us</h2>
