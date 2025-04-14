@@ -132,7 +132,7 @@
     </ul>
   </section>
 
-  <section class="memes">
+ <section class="memes">
   <h2 style="text-align:center; color:#00ffe0;">🔥 Meme Gallery</h2>
   <p style="text-align:center; color:white;">Upload your best DSNT memes and earn a chance to win airdrops.</p>
 
@@ -144,8 +144,18 @@
 
   <!-- Gallery -->
   <div id="gallery" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;"></div>
-</section>
+   <div style="text-align:center; margin-top:30px;">
+  <a 
+    href="https://twitter.com/intent/tweet?text=I+just+uploaded+a+meme+to+%24DSNT+and+slapped+the+blockchain!+Join+the+fun+at+https%3A%2F%2Fdsnuts-relaunch.vercel.app" 
+    target="_blank" 
+    style="padding: 10px 30px; background:#1DA1F2; color:white; border-radius:30px; text-decoration:none; font-weight:bold;"
+  >
+    🔥 Share Your Meme on X
+  </a>
+</div>
 
+</section>
+<!-- Meme Upload Script -->
 <script>
   const cloudName = "dsnutscoin";
   const uploadPreset = "public_upload";
@@ -154,10 +164,9 @@
   const fileInput = document.getElementById("fileInput");
   const gallery = document.getElementById("gallery");
 
-  // Upload & Display Meme
+  // Upload & Display Meme Immediately
   uploadForm.addEventListener("submit", async function (e) {
     e.preventDefault();
-
     const file = fileInput.files[0];
     if (!file) return;
 
@@ -177,6 +186,7 @@
       img.style.width = "200px";
       img.style.borderRadius = "12px";
       img.style.boxShadow = "0 0 10px #00ffe0";
+      img.style.margin = "10px";
       gallery.prepend(img);
 
       fileInput.value = "";
@@ -185,13 +195,8 @@
       console.error(err);
     }
   });
-</script>
-</script>
 
-<!-- Auto-load memes from Cloudinary -->
-<script>
-  const gallery = document.getElementById("gallery");
-
+  // Auto-load past memes from Cloudinary folder
   async function loadMemes() {
     try {
       const res = await fetch("https://res.cloudinary.com/dsnutscoin/image/list/memes.json");
@@ -199,7 +204,7 @@
 
       data.resources.reverse().forEach(img => {
         const image = document.createElement("img");
-        image.src = "https://res.cloudinary.com/dsnutscoin/image/upload/" + img.public_id + "." + img.format;
+        image.src = `https://res.cloudinary.com/dsnutscoin/image/upload/${img.public_id}.${img.format}`;
         image.style.width = "200px";
         image.style.borderRadius = "12px";
         image.style.boxShadow = "0 0 10px #00ffe0";
@@ -217,11 +222,21 @@
 
 <section class="email" style="text-align:center; padding: 60px 20px;">
   <h2 style="color:#00ffe0;">Join the Airdrop</h2>
-  <p style="font-size:1.1rem; color:white; max-width:600px; margin: auto; text-align: left;">
-    Drop your email to get early access to giveaways and exclusive memes!
-  </p>
+  <p style="font-size:1.1rem; color:white; max-width:900px; margin: 0 auto 20px auto; padding-left: 20px; text-align: left;">
+  Drop your email to get early access to giveaways and exclusive memes!
+</p>
 
   <form action="https://formsubmit.co/dsnuts.dsnt@gmail.com" method="POST" style="margin-top:30px;">
+    <div style="text-align:center; margin-top:30px;">
+  <a 
+    href="https://twitter.com/intent/tweet?text=I+just+uploaded+a+meme+to+%24DSNT+and+slapped+the+blockchain!+Join+the+fun+at+https%3A%2F%2Fdsnuts-relaunch.vercel.app" 
+    target="_blank" 
+    style="padding: 10px 30px; background:#1DA1F2; color:white; border-radius:30px; text-decoration:none; font-weight:bold;"
+  >
+    🔥 Share Your Meme on X
+  </a>
+</div>
+
     <input 
       type="email" 
       name="email" 
@@ -249,6 +264,17 @@
     <a href="https://www.tiktok.com/@dsnutscoin?lang=en" target="_blank">TikTok</a>
     <a href="https://t.me/dsnutscoin" target="_blank">Telegram</a>
   </div>
+  
+<section class="coming-soon" style="padding: 60px 20px; text-align:center;">
+  <h2 style="color:#00ffe0;">⚙️ Community Features Coming Soon</h2>
+  <ul style="text-align:left; max-width:800px; margin: 20px auto; color:white; font-size: 1rem; line-height: 1.6;">
+    <li>🤖 Telegram Meme Bot</li>
+    <li>🌰 DSNT NFTs (mint your memes!)</li>
+    <li>🏆 Meme Leaderboard + Weekly Slap Prizes</li>
+    <li>📈 Real-time Chart Integration</li>
+    <li>🎁 NFT Airdrops for Top Uploaders</li>
+  </ul>
+</section>
 
   <footer style="text-align:center; padding:30px; font-size:0.8rem; color:#ccc;">
     © 2025 DsNuts Coin. All rights reserved.
