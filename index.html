@@ -44,12 +44,13 @@
             background-size: cover;
             background-position: center;
             display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
+            justify-content: center;
+            align-items: center;
             flex-direction: column;
             text-align: center;
             color: #fff;
             position: relative;
+            padding-bottom: 150px; /* Added margin at the bottom */
         }
 
         /* Neon Button Style */
@@ -65,7 +66,7 @@
             border: none;
             transition: 0.3s;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
-            margin-bottom: 30px; /* Added margin to keep distance from the bottom */
+            margin-bottom: 30px;
         }
 
         .btn:hover {
@@ -73,10 +74,11 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.8);
         }
 
-        /* Tokenomics and Roadmap Section */
+        /* Section Styling for Tokenomics and Roadmap */
         .section {
             padding: 50px 20px;
             text-align: center;
+            display: none; /* Hide by default, will show on click */
         }
 
         .section h2 {
@@ -85,9 +87,37 @@
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
-        .section p {
-            font-size: 1.2rem;
+        /* List styling for sections (Tokenomics, Roadmap) */
+        .section li {
+            background: #ffffff10;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-left: 5px solid #00ffe0;
+            border-radius: 8px;
             color: #fff;
+            font-size: 1.2rem;
+        }
+
+        /* Socials Section Styling */
+        .socials {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .socials a {
+            color: #fff;
+            margin: 0 15px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: #ff00ff;
         }
 
         /* Responsive Design */
@@ -111,8 +141,8 @@
 
     <!-- Navigation Bar -->
     <div class="navbar">
-        <a href="#tokenomics">Tokenomics</a>
-        <a href="#roadmap">Roadmap</a>
+        <a href="#tokenomics" onclick="document.getElementById('tokenomics').style.display = 'block';">Tokenomics</a>
+        <a href="#roadmap" onclick="document.getElementById('roadmap').style.display = 'block';">Roadmap</a>
     </div>
 
     <!-- Full-Screen Hero Section -->
@@ -123,20 +153,32 @@
     <!-- Tokenomics Section -->
     <div id="tokenomics" class="section">
         <h2>Tokenomics</h2>
-        <p>Total Supply: 69,420,000,000</p>
-        <p>Chain: BNB Smart Chain</p>
-        <p>Decimals: 18</p>
-        <p>Liquidity: 100% Locked on PancakeSwap</p>
+        <ul>
+            <li>Total Supply: 69,420,000,000</li>
+            <li>Chain: BNB Smart Chain</li>
+            <li>Decimals: 18</li>
+            <li>Liquidity: 100% Locked on PancakeSwap</li>
+        </ul>
     </div>
 
     <!-- Roadmap Section -->
     <div id="roadmap" class="section">
         <h2>Roadmap</h2>
-        <p>1. Launch Token</p>
-        <p>2. Community Building</p>
-        <p>3. Meme NFT Minting</p>
-        <p>4. Exchange Listings</p>
-        <p>5. Collaborations & Growth</p>
+        <ul>
+            <li>1. Launch Token</li>
+            <li>2. Community Building</li>
+            <li>3. Meme NFT Minting</li>
+            <li>4. Exchange Listings</li>
+            <li>5. Collaborations & Growth</li>
+        </ul>
+    </div>
+
+    <!-- Socials Section -->
+    <div class="socials">
+        <a href="https://x.com/dsnutscoin" target="_blank">X (Twitter)</a>
+        <a href="https://www.instagram.com/dsnutscoin/" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@dsnutscoin?lang=en" target="_blank">TikTok</a>
+        <a href="https://t.me/dsnutscoin" target="_blank">Telegram</a>
     </div>
 
 </body>
