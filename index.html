@@ -14,17 +14,15 @@
       text-align: center;
     }
     header {
-      padding: 40px 20px;
+      padding: 0; /* Removed padding for header */
       position: relative;
-      height: 80vh; /* Adjusted height for the hero image */
+      width: 100%;
     }
     img.logo {
-      width: auto;
-      height: 300px; /* Adjusted size to make it not too big */
-      border-radius: 20px;
+      width: 100%; /* Logo takes full width */
+      height: auto; /* Ensures aspect ratio is maintained */
+      border-radius: 0; /* Removed border-radius for the full-width image */
       box-shadow: 0 0 20px #00ffe0;
-      position: absolute;
-      top: 20%; /* Position logo within the hero */
     }
     h1 {
       font-size: 3rem;
@@ -230,7 +228,6 @@
 </p>
 
   <form action="https://formsubmit.co/dsnuts.dsnt@gmail.com" method="POST" style="margin-top:30px;">
-   
     <input 
       type="email" 
       name="email" 
