@@ -1,103 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DsNuts Coin</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Bungee', sans-serif;
-      background-color: #0f0c29;
-      color: white;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DsNuts Coin</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
 
-    header {
-      background: #0f0c29;
-      padding: 30px 20px 20px;
-      text-align: center;
-    }
+        /* Full-Screen Hero Section */
+        .hero {
+            height: 100vh;
+            background-image: url('https://i.imgur.com/mLbvA6E.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
 
-    header h1 {
-      font-size: 2.8rem;
-      color: #FCEE09;
-      margin-bottom: 10px;
-    }
+        .hero h1 {
+            font-size: 4rem;
+            text-shadow: 0 0 20px rgba(255, 0, 255, 1);
+        }
 
-    .hero {
-      background: url('https://i.imgur.com/fzHkON9.jpg') no-repeat center top;
-      background-size: cover;
-      background-attachment: fixed;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 60px 20px;
-      text-align: center;
-    }
+        /* Neon Button Style */
+        .btn {
+            background: linear-gradient(145deg, #ff00ff, #ff6600);
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+        }
 
-    .hero a {
-      background-color: #FF0077;
-      color: white;
-      padding: 15px 40px;
-      font-size: 1.2rem;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 15px #FCEE09;
-      transition: all 0.3s ease;
-    }
+        .btn:hover {
+            background: linear-gradient(145deg, #ff6600, #ff00ff);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.8);
+        }
 
-    .hero a:hover {
-      background-color: #FCEE09;
-      color: #16003B;
-    }
+        /* Tokenomics and Roadmap Section */
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-    .socials {
-      margin-top: 30px;
-    }
+        .section h2 {
+            font-size: 2.5rem;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
 
-    .socials a {
-      color: white;
-      margin: 0 12px;
-      font-size: 1.2rem;
-      text-decoration: none;
-    }
+        .section p {
+            font-size: 1.2rem;
+            color: #fff;
+        }
 
-    .section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 20px;
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
 
-    .section h2 {
-      color: #FCEE09;
-      text-align: center;
-      margin-bottom: 20px;
-    }
+            .btn {
+                font-size: 1.2rem;
+                padding: 12px 25px;
+            }
 
-    .section ul {
-      list-style: none;
-      padding: 0;
-    }
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
 
-    .section li {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 15px;
-      border-left: 5px solid #00ffe0;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>DsNuts Coin</h1>
+        <button class="btn" onclick="window.location.href='https://pancakeswap.finance/swap?outputCurrency=YOUR_CONTRACT_ADDRESS_HERE'">Buy $DSNT</button>
+    </div>
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
+    <!-- Tokenomics Section -->
+    <div class="section">
+        <h2>Tokenomics</h2>
+        <p>Total Supply: 69,420,000,000</p>
+        <p>Chain: BNB Smart Chain</p>
+        <p>Decimals: 18</p>
+        <p>Liquidity: 100% Locked on PancakeSwap</p>
+    </div>
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size
+    <!-- Roadmap Section -->
+    <div class="section">
+        <h2>Roadmap</h2>
+        <p>1. Launch Token</p>
+        <p>2. Community Building</p>
+        <p>3. Meme NFT Minting</p>
+        <p>4. Exchange Listings</p>
+        <p>5. Collaborations & Growth</p>
+    </div>
+
+</body>
+</html>
