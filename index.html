@@ -1,192 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DsNuts Coin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Bungee', sans-serif;
-            background-color: #121212;
-            color: #fff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DsNuts Coin - The Meme That Slaps</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Bungee', sans-serif;
+      background: #0f0c29;
+      color: white;
+    }
 
-        /* Navigation Bar */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: #000;
-            padding: 10px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-        }
+    .hero {
+      background: url('https://i.imgur.com/mLbvA6E.jpg') no-repeat center top;
+      background-size: cover;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 60px;
+      text-align: center;
+    }
 
-        .navbar a {
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
+    .hero a {
+      background-color: #FF0077;
+      color: white;
+      padding: 15px 40px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border-radius: 40px;
+      text-decoration: none;
+      box-shadow: 0 0 20px #FCEE09;
+      transition: 0.3s ease;
+    }
 
-        .navbar a:hover {
-            background: linear-gradient(145deg, #ff00ff, #ff6600);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
-        }
+    .hero a:hover {
+      background-color: #FCEE09;
+      color: #16003B;
+    }
 
-        /* Full-Screen Hero Section */
-        .hero {
-            height: 100vh;
-            background-image: url('https://i.imgur.com/mLbvA6E.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            color: #fff;
-            position: relative;
-            padding-bottom: 0; /* No padding at the bottom */
-        }
+    .section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 80px 20px;
+      text-align: left;
+    }
 
-        /* Neon Button Style */
-        .btn {
-            background: linear-gradient(145deg, #ff00ff, #ff6600);
-            padding: 15px 30px;
-            border-radius: 50px;
-            color: white;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            border: none;
-            transition: 0.3s;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
-            margin-top: 50px; /* Centering the button below the hero image */
-        }
+    h2 {
+      font-size: 2.5rem;
+      color: #FCEE09;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-        .btn:hover {
-            background: linear-gradient(145deg, #ff6600, #ff00ff);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.8);
-        }
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.2rem;
+    }
 
-        /* Section Styling for Tokenomics and Roadmap */
-        .section {
-            padding: 50px 20px;
-            text-align: center;
-        }
+    li {
+      background: rgba(255, 255, 255, 0.05);
+      margin-bottom: 12px;
+      padding: 15px 20px;
+      border-left: 5px solid #00ffe0;
+      border-radius: 8px;
+    }
 
-        .section h2 {
-            font-size: 2.5rem;
-            color: #ffcc00;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
+    @media (max-width: 768px) {
+      .hero {
+        padding: 40px 20px;
+        background-position: center;
+        height: 90vh;
+      }
 
-        /* List styling for sections (Tokenomics, Roadmap) */
-        .section ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+      h2 {
+        font-size: 2rem;
+      }
 
-        .section li {
-            background: #ffffff10;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-left: 5px solid #00ffe0;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 1.2rem;
-        }
-
-        /* Socials Section Styling */
-        .socials {
-            text-align: center;
-            padding: 20px;
-            background-color: #000;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .socials a {
-            color: #fff;
-            margin: 0 15px;
-            font-size: 1.5rem;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .socials a:hover {
-            color: #ff00ff;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .btn {
-                font-size: 1.2rem;
-                padding: 12px 25px;
-            }
-
-            .section h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+      .hero a {
+        font-size: 1.1rem;
+        padding: 12px 30px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="#tokenomics" onclick="document.getElementById('tokenomics').style.display = 'block';">Tokenomics</a>
-        <a href="#roadmap" onclick="document.getElementById('roadmap').style.display = 'block';">Roadmap</a>
-    </div>
+  <section class="hero">
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0x7a3DF99b0E8E444Bc42fc34cFa0D387aD798B043" target="_blank">
+      Buy $DSNT
+    </a>
+  </section>
 
-    <!-- Full-Screen Hero Section -->
-    <div class="hero">
-        <button class="btn" onclick="window.location.href='https://pancakeswap.finance/swap?outputCurrency=0x7a3DF99b0E8E444Bc42fc34cFa0D387aD798B043'">Buy $DSNT</button>
-    </div>
+  <section class="section">
+    <h2>Tokenomics</h2>
+    <ul>
+      <li><strong>Total Supply:</strong> 69,420,000,000 DSNT</li>
+      <li><strong>Liquidity:</strong> Locked 🔐</li>
+      <li><strong>Tax:</strong> 0% Buy / 0% Sell (For now 😉)</li>
+      <li><strong>Ownership:</strong> Renounced 💯</li>
+      <li><strong>Chain:</strong> BNB Smart Chain (BEP-20)</li>
+    </ul>
+  </section>
 
-    <!-- Tokenomics Section -->
-    <div id="tokenomics" class="section">
-        <h2>Tokenomics</h2>
-        <ul>
-            <li>Total Supply: 69,420,000,000 DSNT</li>
-            <li>Liquidity: Locked 🔐</li>
-            <li>Tax: 0% Buy / 0% Sell (For now 😉)</li>
-            <li>Ownership: Renounced 💯</li>
-            <li>Chain: BNB Smart Chain (BEP-20)</li>
-        </ul>
-    </div>
-
-    <!-- Roadmap Section -->
-    <div id="roadmap" class="section">
-        <h2>Roadmap</h2>
-        <ul>
-            <li>Phase 1: Token launch & liquidity pool</li>
-            <li>Phase 2: Build hype — viral memes, TikToks, Insta reels</li>
-            <li>Phase 3: Community contests & airdrops</li>
-            <li>Phase 4: CEX listings & influencer partnerships</li>
-            <li>Phase 5: DsNuts merch + NFTs + memeverse expansion</li>
-        </ul>
-    </div>
-
-    <!-- Socials Section -->
-    <div class="socials">
-        <a href="https://x.com/dsnutscoin" target="_blank">X (Twitter)</a>
-        <a href="https://www.instagram.com/dsnutscoin/" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@dsnutscoin?lang=en" target="_blank">TikTok</a>
-        <a href="https://t.me/dsnutscoin" target="_blank">Telegram</a>
-    </div>
+  <section class="section">
+    <h2>Roadmap</h2>
+    <ul>
+      <li><strong>Phase 1:</strong> Token launch & liquidity pool</li>
+      <li><strong>Phase 2:</strong> Build hype — viral memes, TikToks, Insta reels</li>
+      <li><strong>Phase 3:</strong> Community contests & airdrops</li>
+      <li><strong>Phase 4:</strong> CEX listings & influencer partnerships</li>
+      <li><strong>Phase 5:</strong> DsNuts merch + NFTs + memeverse expansion</li>
+    </ul>
+  </section>
 
 </body>
 </html>
