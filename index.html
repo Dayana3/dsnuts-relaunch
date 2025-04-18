@@ -13,6 +13,30 @@
             color: #fff;
         }
 
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #000;
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .navbar a {
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background: linear-gradient(145deg, #ff00ff, #ff6600);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+        }
+
         /* Full-Screen Hero Section */
         .hero {
             height: 100vh;
@@ -20,17 +44,12 @@
             background-size: cover;
             background-position: center;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-end;
+            align-items: flex-end;
             flex-direction: column;
             text-align: center;
             color: #fff;
             position: relative;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            text-shadow: 0 0 20px rgba(255, 0, 255, 1);
         }
 
         /* Neon Button Style */
@@ -46,6 +65,7 @@
             border: none;
             transition: 0.3s;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+            margin-bottom: 30px; /* Added margin to keep distance from the bottom */
         }
 
         .btn:hover {
@@ -89,14 +109,19 @@
 </head>
 <body>
 
-    <!-- Hero Section -->
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+    </div>
+
+    <!-- Full-Screen Hero Section -->
     <div class="hero">
-        <h1>DsNuts Coin</h1>
-        <button class="btn" onclick="window.location.href='https://pancakeswap.finance/swap?outputCurrency=YOUR_CONTRACT_ADDRESS_HERE'">Buy $DSNT</button>
+        <button class="btn" onclick="window.location.href='https://pancakeswap.finance/swap?outputCurrency=0x7a3DF99b0E8E444Bc42fc34cFa0D387aD798B043'">Buy $DSNT</button>
     </div>
 
     <!-- Tokenomics Section -->
-    <div class="section">
+    <div id="tokenomics" class="section">
         <h2>Tokenomics</h2>
         <p>Total Supply: 69,420,000,000</p>
         <p>Chain: BNB Smart Chain</p>
@@ -105,7 +130,7 @@
     </div>
 
     <!-- Roadmap Section -->
-    <div class="section">
+    <div id="roadmap" class="section">
         <h2>Roadmap</h2>
         <p>1. Launch Token</p>
         <p>2. Community Building</p>
