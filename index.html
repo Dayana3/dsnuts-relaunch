@@ -23,64 +23,11 @@
       background-size: cover;
       background-position: center;
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
-      padding-left: 50px; /* Position logo and button */
-      color: white;
     }
 
-    /* Logo on the right side */
-    .logo {
-      width: 300px;
-      height: auto;
-      border-radius: 0;
-      box-shadow: 0 0 20px #00ffe0;
-      position: absolute;
-      right: 0; /* Position logo to the right */
-    }
-
-    /* Logo and Button on the left side */
-    .cta {
-      position: relative;
-      z-index: 1;
-      padding-top: 0;
-      padding-bottom: 50px;
-      padding-right: 10px;
-      text-align: left;
-      max-width: 500px;
-      margin-right: 20px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-top: 20px;
-    }
-
-    p.slogan {
-      font-size: 1.2rem;
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-
-    .btn {
-      padding: 15px 30px;
-      margin: 10px;
-      background: #ff0077;
-      border: none;
-      color: white;
-      font-size: 1.1rem;
-      font-weight: bold;
-      border-radius: 40px;
-      cursor: pointer;
-      transition: 0.3s ease;
-      text-decoration: none;
-    }
-
-    .btn:hover {
-      background: #ff3399;
-    }
-
-    /* Sticky Navigation Bar */
+    /* Slogan in the Navigation Bar */
     .navbar {
       display: flex;
       justify-content: center;
@@ -89,11 +36,13 @@
       position: sticky;
       top: 0;
       z-index: 2;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
 
     .navbar a {
-      color: #fff;
-      padding: 15px 30px;
+      color: white;
       text-decoration: none;
       font-size: 1.2rem;
       text-transform: uppercase;
@@ -104,6 +53,70 @@
     .navbar a:hover {
       background: linear-gradient(145deg, #ff00ff, #ff6600);
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+    }
+
+    /* Social Media Links in the Hero Image */
+    .socials {
+      position: absolute;
+      z-index: 2;
+    }
+
+    .socials a {
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      position: absolute;
+      transition: 0.3s;
+    }
+
+    .socials .twitter {
+      top: 20px;
+      left: 20px;
+    }
+
+    .socials .instagram {
+      top: 20px;
+      right: 20px;
+    }
+
+    .socials .tiktok {
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .socials .telegram {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .socials a:hover {
+      color: #ff00ff;
+    }
+
+    /* CTA Button */
+    .cta {
+      position: absolute;
+      bottom: 50px; /* Bottom center */
+      width: 100%;
+      text-align: center;
+      z-index: 3;
+    }
+
+    .cta .btn {
+      padding: 20px 40px;
+      background: #ff0077;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .cta .btn:hover {
+      background: #ff3399;
     }
 
     /* Section Styling for Tokenomics, Roadmap, Why Buy, etc. */
@@ -157,22 +170,25 @@
 </head>
 <body>
 
-  <!-- Logo and Text Section -->
+  <!-- Navigation Bar with Slogan -->
+  <div class="navbar">
+    <a href="#">The only coin that slaps harder than the real ones!</a>
+  </div>
+
+  <!-- Hero Section with Social Links -->
   <header>
+    <div class="socials">
+      <a href="https://x.com/dsnutscoin" target="_blank" class="twitter">Twitter</a>
+      <a href="https://www.instagram.com/dsnutscoin/" target="_blank" class="instagram">Instagram</a>
+      <a href="https://www.tiktok.com/@dsnutscoin?lang=en" target="_blank" class="tiktok">TikTok</a>
+      <a href="https://t.me/dsnutscoin" target="_blank" class="telegram">Telegram</a>
+    </div>
+
+    <!-- Buy Button -->
     <div class="cta">
-      <h1>DsNuts Coin</h1>
-      <p class="slogan">The only coin that slaps harder than the real ones!</p>
       <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x7a3DF99b0E8E444Bc42fc34cFa0D387aD798B043" target="_blank">Buy $DSNT</a>
     </div>
-    <img src="https://i.imgur.com/fzHkON9.jpg" alt="DsNuts Logo" class="logo" />
   </header>
-
-  <!-- Sticky Navigation Bar -->
-  <div class="navbar">
-    <a href="#why-buy">Why Buy</a>
-    <a href="#tokenomics">Tokenomics</a>
-    <a href="#roadmap">Roadmap</a>
-  </div>
 
   <!-- Why Buy Section -->
   <section id="why-buy">
