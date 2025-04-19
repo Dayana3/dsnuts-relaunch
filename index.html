@@ -30,7 +30,7 @@
     /* Buy Button in the Bottom Center */
     .cta {
       position: absolute;
-      bottom: 50px;
+      bottom: 40px;
       width: 100%;
       text-align: center;
       z-index: 3;
@@ -48,12 +48,7 @@
       transition: 0.3s ease;
       text-decoration: none;
     }
-
-    .cta .btn:hover {
-      background: #ff3399;
-    }
-
-    /* Slogan in Black Bar Positioned Below the Buy Button */
+/* Slogan in Black Bar Positioned Below the Buy Button */
     .slogan-bar {
       position: absolute;
       bottom: 130px; /* Ensure it's below the Buy button */
@@ -65,6 +60,9 @@
       font-weight: bold;
       text-align: center;
       z-index: 2;
+    }
+    .cta .btn:hover {
+      background: #ff3399;
     }
 
     /* Section Styling for Tokenomics, Roadmap, Why Buy, etc. */
@@ -114,6 +112,11 @@
     .social a:hover {
       color: #ff00ff;
     }
+
+    /* Add padding at the bottom of the content to prevent overlap with footer */
+    .content {
+      padding-bottom: 120px; /* Adjust this value to ensure footer doesn't cut off content */
+    }
   </style>
 </head>
 <body>
@@ -124,68 +127,65 @@
     <div class="cta">
       <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x7a3DF99b0E8E444Bc42fc34cFa0D387aD798B043" target="_blank">Buy $DSNT</a>
     </div>
-
-    <!-- Slogan in Black Bar -->
-    <div class="slogan-bar">
-      The only coin that slaps harder than the real ones!
-    </div>
   </header>
 
-  <!-- Why Buy Section -->
-  <section id="why-buy">
-    <h2>Why Buy DsNuts?</h2>
-    <p>Because you like fun. Because you like gains. Because you're tired of utility this and real-world use-case that.</p>
-    <p><strong>DsNuts</strong> is here to bring chaos to the charts and laughs to your wallet. It's meme magic meets BNB-chain speed — with a sprinkle of degenerate dreams and viral juice.</p>
-    <p>Whether you’re in it for the memes, the mayhem, or the moonshots — you’re early. Let’s make some noise, cause some whiplash, and slap the market where it hurts. 🚀</p>
-  </section>
+  <div class="content">
+    <!-- Why Buy Section -->
+    <section id="why-buy">
+      <h2>Why Buy DsNuts?</h2>
+      <p>Because you like fun. Because you like gains. Because you're tired of utility this and real-world use-case that.</p>
+      <p><strong>DsNuts</strong> is here to bring chaos to the charts and laughs to your wallet. It's meme magic meets BNB-chain speed — with a sprinkle of degenerate dreams and viral juice.</p>
+      <p>Whether you’re in it for the memes, the mayhem, or the moonshots — you’re early. Let’s make some noise, cause some whiplash, and slap the market where it hurts. 🚀</p>
+    </section>
 
-  <!-- Roadmap Section -->
-  <section id="roadmap">
-    <h2>Roadmap</h2>
-    <ul>
-      <li><strong>Phase 1:</strong> Token launch & liquidity pool</li>
-      <li><strong>Phase 2:</strong> Build hype — viral memes, TikToks, Insta reels</li>
-      <li><strong>Phase 3:</strong> Community contests & airdrops</li>
-      <li><strong>Phase 4:</strong> CEX listings & influencer partnerships</li>
-      <li><strong>Phase 5:</strong> DsNuts merch + NFTs + memeverse expansion</li>
-    </ul>
-  </section>
+    <!-- Roadmap Section -->
+    <section id="roadmap">
+      <h2>Roadmap</h2>
+      <ul>
+        <li><strong>Phase 1:</strong> Token launch & liquidity pool</li>
+        <li><strong>Phase 2:</strong> Build hype — viral memes, TikToks, Insta reels</li>
+        <li><strong>Phase 3:</strong> Community contests & airdrops</li>
+        <li><strong>Phase 4:</strong> CEX listings & influencer partnerships</li>
+        <li><strong>Phase 5:</strong> DsNuts merch + NFTs + memeverse expansion</li>
+      </ul>
+    </section>
 
-  <!-- Tokenomics Section -->
-  <section id="tokenomics">
-    <h2>Tokenomics</h2>
-    <ul>
-      <li><strong>Total Supply:</strong> 69,420,000,000 DSNT</li>
-      <li><strong>Liquidity:</strong> Locked 🔐</li>
-      <li><strong>Tax:</strong> 0% Buy / 0% Sell (For now 😉)</li>
-      <li><strong>Ownership:</strong> Renounced 💯</li>
-      <li><strong>Chain:</strong> BNB Smart Chain (BEP-20)</li>
-    </ul>
-  </section>
+    <!-- Tokenomics Section -->
+    <section id="tokenomics">
+      <h2>Tokenomics</h2>
+      <ul>
+        <li><strong>Total Supply:</strong> 69,420,000,000 DSNT</li>
+        <li><strong>Liquidity:</strong> Locked 🔐</li>
+        <li><strong>Tax:</strong> 0% Buy / 0% Sell (For now 😉)</li>
+        <li><strong>Ownership:</strong> Renounced 💯</li>
+        <li><strong>Chain:</strong> BNB Smart Chain (BEP-20)</li>
+      </ul>
+    </section>
 
-  <!-- Meme Upload Section -->
-  <section class="memes">
-    <h2 style="text-align:center; color:#00ffe0;">🔥 Meme Gallery</h2>
-    <p style="text-align:center; color:white;">Upload your best DSNT memes and earn a chance to win airdrops.</p>
+    <!-- Meme Upload Section -->
+    <section class="memes">
+      <h2 style="text-align:center; color:#00ffe0;">🔥 Meme Gallery</h2>
+      <p style="text-align:center; color:white;">Upload your best DSNT memes and earn a chance to win airdrops.</p>
 
-    <!-- Upload Form -->
-    <form id="uploadForm" style="text-align:center; margin:20px 0;">
-      <input type="file" id="fileInput" accept="image/*" required />
-      <button type="submit" class="btn">Upload Meme</button>
-    </form>
+      <!-- Upload Form -->
+      <form id="uploadForm" style="text-align:center; margin:20px 0;">
+        <input type="file" id="fileInput" accept="image/*" required />
+        <button type="submit" class="btn">Upload Meme</button>
+      </form>
 
-    <!-- Gallery -->
-    <div id="gallery" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;"></div>
-    <div style="text-align:center; margin-top:30px;">
-      <a 
-        href="https://twitter.com/intent/tweet?text=I+just+uploaded+a+meme+to+%24DSNT+and+slapped+the+blockchain!+Join+the+fun+at+https%3A%2F%2Fdsnuts-relaunch.vercel.app" 
-        target="_blank" 
-        style="padding: 10px 30px; background:#1DA1F2; color:white; border-radius:30px; text-decoration:none; font-weight:bold;"
-      >
-        🔥 Share Your Meme on X
-      </a>
-    </div>
-  </section>
+      <!-- Gallery -->
+      <div id="gallery" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;"></div>
+      <div style="text-align:center; margin-top:30px;">
+        <a 
+          href="https://twitter.com/intent/tweet?text=I+just+uploaded+a+meme+to+%24DSNT+and+slapped+the+blockchain!+Join+the+fun+at+https%3A%2F%2Fdsnuts-relaunch.vercel.app" 
+          target="_blank" 
+          style="padding: 10px 30px; background:#1DA1F2; color:white; border-radius:30px; text-decoration:none; font-weight:bold;"
+        >
+          🔥 Share Your Meme on X
+        </a>
+      </div>
+    </section>
+  </div>
 
   <!-- Meme Upload Script -->
   <script>
