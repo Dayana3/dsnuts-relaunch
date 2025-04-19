@@ -27,34 +27,6 @@
       align-items: center;
     }
 
-    /* Slogan in the Navigation Bar */
-    .navbar {
-      display: flex;
-      justify-content: center;
-      background-color: #000;
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      color: #fff;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: 0.3s;
-    }
-
-    .navbar a:hover {
-      background: linear-gradient(145deg, #ff00ff, #ff6600);
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
-    }
-
     /* Social Media Links in the Hero Image */
     .socials {
       position: absolute;
@@ -93,7 +65,7 @@
       color: #ff00ff;
     }
 
-    /* CTA Button */
+    /* Buy Button in the Bottom Center */
     .cta {
       position: absolute;
       bottom: 50px; /* Bottom center */
@@ -117,6 +89,34 @@
 
     .cta .btn:hover {
       background: #ff3399;
+    }
+
+    /* Sticky Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: #000;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      background: linear-gradient(145deg, #ff00ff, #ff6600);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
     }
 
     /* Section Styling for Tokenomics, Roadmap, Why Buy, etc. */
@@ -222,13 +222,121 @@
     </ul>
   </section>
 
-  <!-- Fixed Footer for Social Links -->
-  <div class="social">
-    <a href="https://x.com/dsnutscoin" target="_blank">Twitter</a>
-    <a href="https://www.instagram.com/dsnutscoin/" target="_blank">Instagram</a>
-    <a href="https://www.tiktok.com/@dsnutscoin?lang=en" target="_blank">TikTok</a>
-    <a href="https://t.me/dsnutscoin" target="_blank">Telegram</a>
-  </div>
+  <!-- Meme Upload Section -->
+  <section class="memes">
+    <h2 style="text-align:center; color:#00ffe0;">🔥 Meme Gallery</h2>
+    <p style="text-align:center; color:white;">Upload your best DSNT memes and earn a chance to win airdrops.</p>
+
+    <!-- Upload Form -->
+    <form id="uploadForm" style="text-align:center; margin:20px 0;">
+      <input type="file" id="fileInput" accept="image/*" required />
+      <button type="submit" class="btn">Upload Meme</button>
+    </form>
+
+    <!-- Gallery -->
+    <div id="gallery" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;"></div>
+    <div style="text-align:center; margin-top:30px;">
+      <a 
+        href="https://twitter.com/intent/tweet?text=I+just+uploaded+a+meme+to+%24DSNT+and+slapped+the+blockchain!+Join+the+fun+at+https%3A%2F%2Fdsnuts-relaunch.vercel.app" 
+        target="_blank" 
+        style="padding: 10px 30px; background:#1DA1F2; color:white; border-radius:30px; text-decoration:none; font-weight:bold;"
+      >
+        🔥 Share Your Meme on X
+      </a>
+    </div>
+  </section>
+
+  <!-- Meme Upload Script -->
+  <script>
+    const cloudName = "dsnutscoin";
+    const uploadPreset = "public_upload";
+
+    const uploadForm = document.getElementById("uploadForm");
+    const fileInput = document.getElementById("fileInput");
+    const gallery = document.getElementById("gallery");
+
+    // Upload & Display Meme Immediately
+    uploadForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const file = fileInput.files[0];
+      if (!file) return;
+
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", uploadPreset);
+
+      try {
+        const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+          method: "POST",
+          body: formData,
+        });
+        const data = await res.json();
+
+        const img = document.createElement("img");
+        img.src = data.secure_url;
+        img.style.width = "200px";
+        img.style.borderRadius = "12px";
+        img.style.boxShadow = "0 0 10px #00ffe0";
+        img.style.margin = "10px";
+        gallery.prepend(img);
+
+        fileInput.value = "";
+      } catch (err) {
+        alert("Upload failed! Try again.");
+        console.error(err);
+      }
+    });
+
+    // Auto-load past memes from Cloudinary folder
+    async function loadMemes() {
+      try {
+        const res = await fetch("https://res.cloudinary.com/dsnutscoin/image/list/memes.json");
+        const data = await res.json();
+
+        data.resources.reverse().forEach(img => {
+          const image = document.createElement("img");
+          image.src = `https://res.cloudinary.com/dsnutscoin/image/upload/${img.public_id}.${img.format}`;
+          image.style.width = "200px";
+          image.style.borderRadius = "12px";
+          image.style.boxShadow = "0 0 10px #00ffe0";
+          image.style.margin = "10px";
+          gallery.appendChild(image);
+        });
+      } catch (err) {
+        console.error("Could not load memes:", err);
+      }
+    }
+
+    // Load memes on page load
+    window.addEventListener("DOMContentLoaded", loadMemes);
+  </script>
+
+  <!-- Join the Airdrop Section -->
+  <section class="email" style="text-align:center; padding: 60px 20px;">
+    <h2 style="color:#00ffe0;">Join the Airdrop</h2>
+    <p style="font-size:1.1rem; color:white; max-width:900px; margin: 0 auto 20px auto; padding-left: 20px; text-align: left;">
+    Drop your email to get early access to giveaways and exclusive memes!
+    </p>
+
+    <form action="https://formsubmit.co/dsnuts.dsnt@gmail.com" method="POST" style="margin-top:30px;">
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Enter your email" 
+        required 
+        style="padding: 12px 20px; width: 300px; max-width: 90%; border-radius: 25px; border: none; font-family: 'Bungee', sans-serif; font-size: 1rem; margin-bottom: 20px;"
+      />
+      <br>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://dsnuts-relaunch.vercel.app/thank-you.html">
+      <button 
+        type="submit" 
+        style="padding: 12px 40px; border: none; border-radius: 30px; background-color: #00ffe0; color: #16003B; font-size: 1rem; font-weight: bold; font-family: 'Bungee', sans-serif; cursor: pointer;"
+      >
+        Join the Drop
+      </button>
+    </form>
+  </section>
 
 </body>
 </html>
