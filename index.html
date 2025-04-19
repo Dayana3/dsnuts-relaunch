@@ -27,9 +27,14 @@
       align-items: center;
     }
 
-    /* Social Media Links in the Hero Image */
+    /* Social Media Links inside Gold-colored Areas */
     .socials {
       position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 30px;
       z-index: 2;
     }
 
@@ -37,28 +42,7 @@
       color: white;
       font-size: 1.5rem;
       text-decoration: none;
-      position: absolute;
       transition: 0.3s;
-    }
-
-    .socials .twitter {
-      top: 20px;
-      left: 20px;
-    }
-
-    .socials .instagram {
-      top: 20px;
-      right: 20px;
-    }
-
-    .socials .tiktok {
-      bottom: 20px;
-      left: 20px;
-    }
-
-    .socials .telegram {
-      bottom: 20px;
-      right: 20px;
     }
 
     .socials a:hover {
@@ -68,7 +52,7 @@
     /* Buy Button in the Bottom Center */
     .cta {
       position: absolute;
-      bottom: 50px; /* Bottom center */
+      bottom: 50px;
       width: 100%;
       text-align: center;
       z-index: 3;
@@ -91,32 +75,18 @@
       background: #ff3399;
     }
 
-    /* Sticky Navigation Bar */
-    .navbar {
-      display: flex;
-      justify-content: center;
+    /* Slogan in Black Bar */
+    .slogan-bar {
+      position: absolute;
+      bottom: 100px;
+      width: 100%;
       background-color: #000;
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      color: #fff;
+      padding: 10px 0;
+      color: white;
       font-size: 1.5rem;
       font-weight: bold;
-    }
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: 0.3s;
-    }
-
-    .navbar a:hover {
-      background: linear-gradient(145deg, #ff00ff, #ff6600);
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+      text-align: center;
+      z-index: 2;
     }
 
     /* Section Styling for Tokenomics, Roadmap, Why Buy, etc. */
@@ -170,13 +140,9 @@
 </head>
 <body>
 
-  <!-- Navigation Bar with Slogan -->
-  <div class="navbar">
-    <a href="#">The only coin that slaps harder than the real ones!</a>
-  </div>
-
   <!-- Hero Section with Social Links -->
   <header>
+    <!-- Social Media Links positioned in Gold-colored Corners -->
     <div class="socials">
       <a href="https://x.com/dsnutscoin" target="_blank" class="twitter">Twitter</a>
       <a href="https://www.instagram.com/dsnutscoin/" target="_blank" class="instagram">Instagram</a>
@@ -187,6 +153,11 @@
     <!-- Buy Button -->
     <div class="cta">
       <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x7a3DF99b0E8E444Bc42fc34cFa0D387aD798B043" target="_blank">Buy $DSNT</a>
+    </div>
+
+    <!-- Slogan in Black Bar -->
+    <div class="slogan-bar">
+      The only coin that slaps harder than the real ones!
     </div>
   </header>
 
@@ -310,33 +281,6 @@
     // Load memes on page load
     window.addEventListener("DOMContentLoaded", loadMemes);
   </script>
-
-  <!-- Join the Airdrop Section -->
-  <section class="email" style="text-align:center; padding: 60px 20px;">
-    <h2 style="color:#00ffe0;">Join the Airdrop</h2>
-    <p style="font-size:1.1rem; color:white; max-width:900px; margin: 0 auto 20px auto; padding-left: 20px; text-align: left;">
-    Drop your email to get early access to giveaways and exclusive memes!
-    </p>
-
-    <form action="https://formsubmit.co/dsnuts.dsnt@gmail.com" method="POST" style="margin-top:30px;">
-      <input 
-        type="email" 
-        name="email" 
-        placeholder="Enter your email" 
-        required 
-        style="padding: 12px 20px; width: 300px; max-width: 90%; border-radius: 25px; border: none; font-family: 'Bungee', sans-serif; font-size: 1rem; margin-bottom: 20px;"
-      />
-      <br>
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://dsnuts-relaunch.vercel.app/thank-you.html">
-      <button 
-        type="submit" 
-        style="padding: 12px 40px; border: none; border-radius: 30px; background-color: #00ffe0; color: #16003B; font-size: 1rem; font-weight: bold; font-family: 'Bungee', sans-serif; cursor: pointer;"
-      >
-        Join the Drop
-      </button>
-    </form>
-  </section>
 
 </body>
 </html>
