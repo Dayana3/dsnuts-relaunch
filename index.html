@@ -14,26 +14,41 @@
       text-align: center;
     }
 
-    /* Header with Logo Image */
+    /* Hero Section */
     header {
-      padding: 0;
       position: relative;
       width: 100%;
+      height: 100vh;
+      background-image: url('https://i.imgur.com/fzHkON9.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 50px; /* Position logo and button */
+      color: white;
     }
 
-    img.logo {
-      width: 100%;
+    /* Logo on the right side */
+    .logo {
+      width: 300px;
       height: auto;
       border-radius: 0;
       box-shadow: 0 0 20px #00ffe0;
+      position: absolute;
+      right: 0; /* Position logo to the right */
     }
 
-    /* Slogan and CTA Button */
+    /* Logo and Button on the left side */
     .cta {
-      padding-top: 30px;
-      padding-bottom: 50px;
       position: relative;
       z-index: 1;
+      padding-top: 0;
+      padding-bottom: 50px;
+      padding-right: 10px;
+      text-align: left;
+      max-width: 500px;
+      margin-right: 20px;
     }
 
     h1 {
@@ -65,7 +80,7 @@
       background: #ff3399;
     }
 
-    /* Navigation Bar */
+    /* Sticky Navigation Bar */
     .navbar {
       display: flex;
       justify-content: center;
@@ -144,15 +159,15 @@
 
   <!-- Logo and Text Section -->
   <header>
-    <img src="https://i.imgur.com/fzHkON9.jpg" alt="DsNuts Logo" class="logo" />
     <div class="cta">
       <h1>DsNuts Coin</h1>
       <p class="slogan">The only coin that slaps harder than the real ones!</p>
       <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x7a3DF99b0E8E444Bc42fc34cFa0D387aD798B043" target="_blank">Buy $DSNT</a>
     </div>
+    <img src="https://i.imgur.com/fzHkON9.jpg" alt="DsNuts Logo" class="logo" />
   </header>
 
-  <!-- Navigation Bar -->
+  <!-- Sticky Navigation Bar -->
   <div class="navbar">
     <a href="#why-buy">Why Buy</a>
     <a href="#tokenomics">Tokenomics</a>
