@@ -13,29 +13,40 @@
       color: white;
       text-align: center;
     }
+
+    /* Header with Logo Image */
     header {
-      padding: 0; /* Removed padding for header */
+      padding: 0;
       position: relative;
       width: 100%;
     }
+
     img.logo {
-      width: 100%; /* Logo takes full width */
-      height: auto; /* Ensures aspect ratio is maintained */
-      border-radius: 0; /* Removed border-radius for the full-width image */
+      width: 100%;
+      height: auto;
+      border-radius: 0;
       box-shadow: 0 0 20px #00ffe0;
     }
+
+    /* Slogan and CTA Button */
+    .cta {
+      padding-top: 30px;
+      padding-bottom: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
     h1 {
       font-size: 3rem;
       margin-top: 20px;
     }
+
     p.slogan {
       font-size: 1.2rem;
       color: #ffffff;
       margin-bottom: 40px;
     }
-    .cta {
-      margin-bottom: 50px;
-    }
+
     .btn {
       padding: 15px 30px;
       margin: 10px;
@@ -49,23 +60,55 @@
       transition: 0.3s ease;
       text-decoration: none;
     }
+
     .btn:hover {
       background: #ff3399;
     }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: #000;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    .navbar a {
+      color: #fff;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      background: linear-gradient(145deg, #ff00ff, #ff6600);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+    }
+
+    /* Section Styling for Tokenomics, Roadmap, Why Buy, etc. */
     section {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
       text-align: left;
     }
+
     section h2 {
       color: #00ffe0;
       text-align: center;
     }
+
     section ul {
       list-style: none;
       padding: 0;
     }
+
     section li {
       background: #ffffff10;
       margin-bottom: 10px;
@@ -73,181 +116,88 @@
       border-left: 5px solid #00ffe0;
       border-radius: 8px;
     }
+
+    /* Fixed Footer for Social Links */
     .social {
       text-align: center;
-      margin-top: 25px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #000;
+      padding: 15px 0;
+      z-index: 10;
     }
+
     .social a {
       margin: 0 10px;
       color: white;
       text-decoration: none;
       font-size: 1.2rem;
     }
+
+    .social a:hover {
+      color: #ff00ff;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="https://i.imgur.com/fzHkON9.jpg" alt="DsNuts Logo" class="logo" />
-  <h1>DsNuts Coin</h1>
-  <p class="slogan">The only coin that slaps harder than the real ones!</p>
+  <!-- Logo and Text Section -->
+  <header>
+    <img src="https://i.imgur.com/fzHkON9.jpg" alt="DsNuts Logo" class="logo" />
+    <div class="cta">
+      <h1>DsNuts Coin</h1>
+      <p class="slogan">The only coin that slaps harder than the real ones!</p>
+      <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x7a3DF99b0E8E444Bc42fc34cFa0D387aD798B043" target="_blank">Buy $DSNT</a>
+    </div>
+  </header>
 
-  <div class="cta">
-    <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x7a3DF99b0E8E444Bc42fc34cFa0D387aD798B043" target="_blank">Buy $DSNT</a>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="#why-buy">Why Buy</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#roadmap">Roadmap</a>
   </div>
 
+  <!-- Why Buy Section -->
+  <section id="why-buy">
+    <h2>Why Buy DsNuts?</h2>
+    <p>Because you like fun. Because you like gains. Because you're tired of utility this and real-world use-case that.</p>
+    <p><strong>DsNuts</strong> is here to bring chaos to the charts and laughs to your wallet. It's meme magic meets BNB-chain speed — with a sprinkle of degenerate dreams and viral juice.</p>
+    <p>Whether you’re in it for the memes, the mayhem, or the moonshots — you’re early. Let’s make some noise, cause some whiplash, and slap the market where it hurts. 🚀</p>
+  </section>
+
+  <!-- Roadmap Section -->
+  <section id="roadmap">
+    <h2>Roadmap</h2>
+    <ul>
+      <li><strong>Phase 1:</strong> Token launch & liquidity pool</li>
+      <li><strong>Phase 2:</strong> Build hype — viral memes, TikToks, Insta reels</li>
+      <li><strong>Phase 3:</strong> Community contests & airdrops</li>
+      <li><strong>Phase 4:</strong> CEX listings & influencer partnerships</li>
+      <li><strong>Phase 5:</strong> DsNuts merch + NFTs + memeverse expansion</li>
+    </ul>
+  </section>
+
+  <!-- Tokenomics Section -->
+  <section id="tokenomics">
+    <h2>Tokenomics</h2>
+    <ul>
+      <li><strong>Total Supply:</strong> 69,420,000,000 DSNT</li>
+      <li><strong>Liquidity:</strong> Locked 🔐</li>
+      <li><strong>Tax:</strong> 0% Buy / 0% Sell (For now 😉)</li>
+      <li><strong>Ownership:</strong> Renounced 💯</li>
+      <li><strong>Chain:</strong> BNB Smart Chain (BEP-20)</li>
+    </ul>
+  </section>
+
+  <!-- Fixed Footer for Social Links -->
   <div class="social">
     <a href="https://x.com/dsnutscoin" target="_blank">Twitter</a>
     <a href="https://www.instagram.com/dsnutscoin/" target="_blank">Instagram</a>
     <a href="https://www.tiktok.com/@dsnutscoin?lang=en" target="_blank">TikTok</a>
     <a href="https://t.me/dsnutscoin" target="_blank">Telegram</a>
   </div>
-</header>
-
-<section>
-  <h2>Why Buy DsNuts?</h2>
-  <p>Because you like fun. Because you like gains. Because you're tired of utility this and real-world use-case that.</p>
-  <p><strong>DsNuts</strong> is here to bring chaos to the charts and laughs to your wallet. It's meme magic meets BNB-chain speed — with a sprinkle of degenerate dreams and viral juice.</p>
-  <p>Whether you’re in it for the memes, the mayhem, or the moonshots — you’re early. Let’s make some noise, cause some whiplash, and slap the market where it hurts. 🚀</p>
-</section>
-
-<section>
-  <h2>Roadmap</h2>
-  <ul>
-    <li><strong>Phase 1:</strong> Token launch & liquidity pool</li>
-    <li><strong>Phase 2:</strong> Build hype — viral memes, TikToks, Insta reels</li>
-    <li><strong>Phase 3:</strong> Community contests & airdrops</li>
-    <li><strong>Phase 4:</strong> CEX listings & influencer partnerships</li>
-    <li><strong>Phase 5:</strong> DsNuts merch + NFTs + memeverse expansion</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Tokenomics</h2>
-  <ul>
-    <li><strong>Total Supply:</strong> 69,420,000,000 DSNT</li>
-    <li><strong>Liquidity:</strong> Locked 🔐</li>
-    <li><strong>Tax:</strong> 0% Buy / 0% Sell (For now 😉)</li>
-    <li><strong>Ownership:</strong> Renounced 💯</li>
-    <li><strong>Chain:</strong> BNB Smart Chain (BEP-20)</li>
-  </ul>
-</section>
-
-<section class="memes">
-  <h2 style="text-align:center; color:#00ffe0;">🔥 Meme Gallery</h2>
-  <p style="text-align:center; color:white;">Upload your best DSNT memes and earn a chance to win airdrops.</p>
-
-  <!-- Upload Form -->
-  <form id="uploadForm" style="text-align:center; margin:20px 0;">
-    <input type="file" id="fileInput" accept="image/*" required />
-    <button type="submit" class="btn">Upload Meme</button>
-  </form>
-
-  <!-- Gallery -->
-  <div id="gallery" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;"></div>
-  <div style="text-align:center; margin-top:30px;">
-    <a 
-      href="https://twitter.com/intent/tweet?text=I+just+uploaded+a+meme+to+%24DSNT+and+slapped+the+blockchain!+Join+the+fun+at+https%3A%2F%2Fdsnuts-relaunch.vercel.app" 
-      target="_blank" 
-      style="padding: 10px 30px; background:#1DA1F2; color:white; border-radius:30px; text-decoration:none; font-weight:bold;"
-    >
-      🔥 Share Your Meme on X
-    </a>
-  </div>
-</section>
-
-<!-- Meme Upload Script -->
-<script>
-  const cloudName = "dsnutscoin";
-  const uploadPreset = "public_upload";
-
-  const uploadForm = document.getElementById("uploadForm");
-  const fileInput = document.getElementById("fileInput");
-  const gallery = document.getElementById("gallery");
-
-  // Upload & Display Meme Immediately
-  uploadForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    const file = fileInput.files[0];
-    if (!file) return;
-
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", uploadPreset);
-
-    try {
-      const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
-        method: "POST",
-        body: formData,
-      });
-      const data = await res.json();
-
-      const img = document.createElement("img");
-      img.src = data.secure_url;
-      img.style.width = "200px";
-      img.style.borderRadius = "12px";
-      img.style.boxShadow = "0 0 10px #00ffe0";
-      img.style.margin = "10px";
-      gallery.prepend(img);
-
-      fileInput.value = "";
-    } catch (err) {
-      alert("Upload failed! Try again.");
-      console.error(err);
-    }
-  });
-
-  // Auto-load past memes from Cloudinary folder
-  async function loadMemes() {
-    try {
-      const res = await fetch("https://res.cloudinary.com/dsnutscoin/image/list/memes.json");
-      const data = await res.json();
-
-      data.resources.reverse().forEach(img => {
-        const image = document.createElement("img");
-        image.src = `https://res.cloudinary.com/dsnutscoin/image/upload/${img.public_id}.${img.format}`;
-        image.style.width = "200px";
-        image.style.borderRadius = "12px";
-        image.style.boxShadow = "0 0 10px #00ffe0";
-        image.style.margin = "10px";
-        gallery.appendChild(image);
-      });
-    } catch (err) {
-      console.error("Could not load memes:", err);
-    }
-  }
-
-  // Load memes on page load
-  window.addEventListener("DOMContentLoaded", loadMemes);
-</script>
-
-<section class="email" style="text-align:center; padding: 60px 20px;">
-  <h2 style="color:#00ffe0;">Join the Airdrop</h2>
-  <p style="font-size:1.1rem; color:white; max-width:900px; margin: 0 auto 20px auto; padding-left: 20px; text-align: left;">
-  Drop your email to get early access to giveaways and exclusive memes!
-</p>
-
-  <form action="https://formsubmit.co/dsnuts.dsnt@gmail.com" method="POST" style="margin-top:30px;">
-    <input 
-      type="email" 
-      name="email" 
-      placeholder="Enter your email" 
-      required 
-      style="padding: 12px 20px; width: 300px; max-width: 90%; border-radius: 25px; border: none; font-family: 'Bungee', sans-serif; font-size: 1rem; margin-bottom: 20px;"
-    />
-    <br>
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://dsnuts-relaunch.vercel.app/thank-you.html">
-    
-    <button 
-      type="submit" 
-      style="padding: 12px 40px; border: none; border-radius: 30px; background-color: #00ffe0; color: #16003B; font-size: 1rem; font-weight: bold; font-family: 'Bungee', sans-serif; cursor: pointer;"
-    >
-      Join the Drop
-    </button>
-  </form>
-  
-</section>
 
 </body>
 </html>
